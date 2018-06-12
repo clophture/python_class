@@ -1,4 +1,5 @@
 #!/usr/bin//env python3
+
 import json
 
 def inputAge(message):
@@ -38,8 +39,14 @@ def setAgeGroup():
     elif age > 46 and age < 52:
         age_group = "47_51"
         return age_group
-    else:
+    elif age > 51 and age < 57
         age_group = "52_56"
+        return age_group
+    elif age > 56 and age < 62
+        age_group = "57_61"
+        return age_group
+    else:
+        age_group = "62+"
         return age_group
 
 
@@ -120,10 +127,10 @@ def inputProfile(message):
                 print("Unrecognized input! Try again.")
                 continue
             return 'YES' if userInput.upper() in ('Y', 'YES') else 'NO'
-            break 
+            break
 
-        
-        
+
+
 
 
 gender = inputGender("What is your gender: Male or Female? \n")
@@ -131,7 +138,7 @@ gender = inputGender("What is your gender: Male or Female? \n")
 age = inputAge("How old are you? \n")
 age_group = setAgeGroup()
 
-#profile = inputProfile("Do you have a profile? \n") 
+#profile = inputProfile("Do you have a profile? \n")
 
 pushupRAW = inputPushup("How many pushups did you do? \n")
 
@@ -148,5 +155,3 @@ print("You completed " + str(pushupRAW) + " pushups & " + str(situpRAW) + " situ
 print("You ran 2 miles in " + str(runMRAW) + ":" + str(runSRAW) + " minutes.")
 #print("Your profile status is " + str(profile) + ".")
 print("Your age group is " + str(age_group) +" \n")
-
-
