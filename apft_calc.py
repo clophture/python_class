@@ -1,6 +1,9 @@
 #!/usr/bin//env python3
 
 import json
+with open('apft_chart.json', 'r') as f:
+    chart_dict = json.load(f)
+
 
 def inputAge(message):
     while True:
@@ -149,9 +152,9 @@ runSRAW = inputRunS("How many seconds did you complete the 2 mile run in? \n")
 
 
 
-print("\n\n")
-print("You are a " + str(age) + " year old " + str(gender) + ".")
-print("You completed " + str(pushupRAW) + " pushups & " + str(situpRAW) + " situps.")
-print("You ran 2 miles in " + str(runMRAW) + ":" + str(runSRAW) + " minutes.")
+#print("\n\n")
+#print("You are a " + str(age) + " year old " + str(gender) + ".")
+#print("You completed " + str(pushupRAW) + " pushups & " + str(situpRAW) + " situps.")
+#print("You ran 2 miles in " + str(runMRAW) + ":" + str(runSRAW) + " minutes.")
 #print("Your profile status is " + str(profile) + ".")
-print("Your age group is " + str(age_group) +" \n")
+#print("Your age group is " + str(age_group) +" \n")
