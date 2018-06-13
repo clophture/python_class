@@ -30,23 +30,30 @@ def evalSitup(situpRAW,gender,age_group):
         situpScore = int(chart_dict[gender]['situps'][age_group][str(situpRAW)])
         return situpScore
 
-def evalRun(evaltime,gender,age_group):
+def evalAerobic(evaltime,gender,age_group,aerobic):
     """ Return the score for run time completed for your age groupself.
-        Expecting three arguments evaltime, gender, age_group. """
-    if int(evaltime) < 1300:
-        runScore = 100
-        return runScore
-    elif int(evaltime) > 2500:
-        runScore = 0
-        return runScore
+        Expecting four arguments evaltime, gender, age_group, aerobic. """
+    if aerobic in ("walk", "cycle", "swim"): 
+        if int(evaltime) <= int(list(sorted((chart_dict[gender][aerobic][age_group].keys())))[0]):
+            aerobicScore = 60
+            return aerobicScore
+        else:
+            aerobicScore = 0
+            return aerobicScore
+    elif int(evaltime) < int(list(sorted((chart_dict[gender][aerobic][age_group].keys())))[0]):
+        aerobicScore = 100
+        return aerobicScore
+    elif int(evaltime) > int(list(sorted((chart_dict[gender][aerobic][age_group].keys())))[-1]):
+        aerobicScore = 0
+        return aerobicScore
     else:
-        runScore = int(chart_dict[gender]['run'][age_group][str(evaltime)])
-        return runScore
+        aerobicScore = int(chart_dict[gender][aerobic][age_group][str(evaltime)])
+        return aerobicScore
 
 def main():
   pushupScore = evalPushup(45,"MALE","32_36")
   situpScore = evalSitup(45,"MALE","32_36")
-  runScore = evalRun(1536,"MALE","32_36")
+  aerobicScore = evalAerobic(1536,"MALE","32_36")
   print(pushupScore)
   print(situpScore)
 
