@@ -2,5 +2,5 @@
 WOAC python class
 
 
-- [] Create Profile eval
-- [] Add Pass Fail to cowsay
+- [ ] Create Profile eval
+- [ ] Add Pass Fail to cowsay
