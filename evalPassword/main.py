@@ -2,14 +2,15 @@
 import os
 import string
 import getpass
-
+import random
+import cowsay
 
 def inputPass(message):
     """Prompt user for thier password. userInput will return."""
     while True:
         print("Enter a password with at least length of 14. Password must contain lowercase, \nuppercase, digits, and punctuation. You can not use more than three of the same time in a row.")
-       password1 = getpass.getpass()
-       password2 = getpass.getpass()
+        password1 = getpass.getpass()
+        password2 = getpass.getpass()
 #        password1 = input("pass ")
 #        password2 = input("pass ")
         if str(password1) == str(password2) and len(password1) > 13:
@@ -46,7 +47,9 @@ def main():
             print("Password contains 4 punctuation in a row. Try again!\n")
             break
         else:
-            print("something")
+            pass
+    cowsay.daemon('{} \n your password is good!'.format(password))
+
 
 if __name__ == "__main__":
     main()
