@@ -40,14 +40,13 @@ def punctuation():
     return random.choice(string.punctuation)
 
 
-def main():
+def inputGen(message=14):
     print("pass")
     os.system('clear')
     p = []
     f = [lowercase, uppercase, digit, punctuation]
-    length = inputLen("How long of a password do you want? \n")
-
-    for x in range(length):
+    userInput = int(input(message))
+    for x in range(userInput):
         if len(p) < 3:
             p.append(random.choice(f)())
             ++x
@@ -67,13 +66,13 @@ def main():
            else:
                p.append(random.choice(f)())
                ++x
-    
-    print(''.join(p))
+
+    return (''.join(p))
 
 
-
-
-
+def main():
+    length = inputGen("How long of a password do you want? \n")
+    print(length)
 
 
 if __name__ == "__main__":
